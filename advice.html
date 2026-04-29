@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Advice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Advice</h1>
+        <div id="categoryDisplay" style="margin-bottom:20px;font-size:1.1rem;"></div>
+        <div id="adviceContent"></div>
+        <a href="index.html" style="color:#fff;text-decoration:underline;display:block;margin-top:30px;">Back to Calculator</a>
+    </div>
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat');
+    const adviceContent = document.getElementById('adviceContent');
+    const categoryDisplay = document.getElementById('categoryDisplay');
+    let html = '';
+    let catText = '';
+    if (cat === 'Obese') {
+        catText = 'Your BMI category: Obese';
+        html = `<ul><li>Need to exercise</li><li>Need to eat healthy</li><li>Low carb diet</li><li>Consult a doctor</li></ul>`;
+    } else if (cat === 'Normal weight') {
+        catText = 'Your BMI category: Normal weight';
+        html = `<ul><li>Maintain your health</li><li>Keep training</li><li>Chill rahe bhai</li></ul>`;
+    } else if (cat === 'Underweight') {
+        catText = 'Your BMI category: Underweight';
+        html = `<ul><li>Inc carb intake</li><li>Need protein</li><li>Keep exercising</li></ul>`;
+    } else {
+        catText = 'BMI category not recognized.';
+        html = `<ul><li>No advice available.</li></ul>`;
+    }
+    categoryDisplay.textContent = catText;
+    adviceContent.innerHTML = html;
+    </script>
+</body>
+</html>
