@@ -1,7 +1,8 @@
 # WTESE
 This is a BMI calculator webApp for my WT exam 
 
-The problem statement was 
+The problem statement was :
+
 Create a responsive interactive website using HTML CSS and Javascript and publish the app using GitHub/GitHub pages or free hosting platforms like nestify
 
 # BMI Calculator
